@@ -7,6 +7,21 @@ import org.springframework.data.annotation.Id;
  */
 public class Book {
 
+	/**
+	 *
+	 *
+	 application/json
+	 {
+	 "name":"",
+	 "isbn":"",
+	 "author":"",
+	 "pages":""
+	 }
+
+	 curl -H "Content-Type: application/json" -X POST -d '{"name":"test","isbn":"123","author":"seb","pages":"12"}' http://localhost:8080/book
+	 {"name":"test","isbn":"123","author":"seb","pages":"12"}
+	 */
+
 	@Id
 	private String id;
 	private String name;
@@ -14,23 +29,23 @@ public class Book {
 	private String author;
 	private int pages;
 
-//	public Book() {
-//	}
-//
-//	public Book(String name, String isbn, String author, int pages) {
-//		this.name = name;
-//		this.isbn = isbn;
-//		this.author = author;
-//		this.pages = pages;
-//	}
+	public Book() {
+	}
 
-//	public String getId() {
-//		return id;
-//	}
-//
-//	public void setId(String id) {
-//		this.id = id;
-//	}
+	public Book(String name, String isbn, String author, int pages) {
+		this.name = name;
+		this.isbn = isbn;
+		this.author = author;
+		this.pages = pages;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;

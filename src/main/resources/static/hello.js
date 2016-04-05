@@ -19,7 +19,8 @@ controller('Hello', function($scope,$http) {
 
     $http.get('http://localhost:8080/book').
     success(function(data) {
-        $scope.greeting = data;
+        $scope.greeting = data[1];
+        console.log(data);
     });
 
 
