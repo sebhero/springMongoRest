@@ -19,8 +19,9 @@ controller('Hello', function($scope,$http) {
 
     $http.get('http://localhost:8080/book').
     success(function(data) {
-        $scope.greeting = data[1];
-        console.log(data);
+        $scope.greeting = data.books[0];
+        console.log("got "+data.books);
+        console.log("got1 "+JSON.stringify(data));
     });
 
 

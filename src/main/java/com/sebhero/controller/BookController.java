@@ -15,6 +15,8 @@ import java.util.Map;
  * updated 20150405 test
  */
 
+//localhost:63342
+
 @RestController
 @RequestMapping("/book")
 public class BookController {
@@ -92,6 +94,10 @@ public class BookController {
 	 * Get all books
 	 * @return
 	 */
+	//crossOrigin gor satt webinterface kan vara po en
+	//annan server
+	//ip och port ar webservers koppling
+	@CrossOrigin(origins = "http://localhost:63342")
 	@RequestMapping(method = RequestMethod.GET)
 	public Map<String, Object> getAllBooks() {
 		List<Book> books = bookRepository.findAll();
