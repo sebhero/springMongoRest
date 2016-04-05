@@ -2,10 +2,13 @@ package com.sebhero.model;
 
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
+
 /**
  * Created by Sebastian Börebäck on 2016-04-04.
  */
-public class Book {
+
+public class Book implements Serializable{
 
 	/**
 	 *
