@@ -77,6 +77,8 @@ public class BookController {
 	@RequestMapping(method = RequestMethod.PUT, value = "/{bookId}")
 	public Book editBook(@PathVariable("bookId") String bookId,
 	                     @RequestBody Map<String, Object> bookMap) {
+
+		System.out.println("update book");
 		Book book = new Book(bookMap.get("name").toString(),
 				bookMap.get("isbn").toString(),
 				bookMap.get("author").toString(),
@@ -120,6 +122,7 @@ public class BookController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Book> getAllBooks() {
+		System.out.println("calling get all");
 		List<Book> books = bookRepository.findAll();
 		Map<String, Object> response = new LinkedHashMap<>();
 //		response.put("totalBooks", books.size());
